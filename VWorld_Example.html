@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>VWorld 3D Map</title>
+    <script type="text/javascript" src="https://map.vworld.kr/js/vworldMapInit.js.do?version=2.0"></script>
+</head>
+
+<body>
+    <div id="map" style="width: 100%; height: 100vh;"></div>
+    <script>
+        var map;
+        vworld.init("0BE72952-850B-3527-9593-02B7069461C7", function () {
+            map = new vworld.Map("map", {
+                basemapType: vworld.BasemapType.SATELLITE,
+                controlDensity: vworld.DensityType.FULL,
+                interactionLevel: vworld.InteractionType.OPTIONAL
+            });
+            map.setCenterAndZoom(new vworld.geom.Point(127.1214261, 37.5202991), 14); // 원하는 위치와 줌 설정
+        });
+    </script>
+</body>
+
+</html>
